@@ -1,0 +1,58 @@
+header {
+    margin-top: 25px;
+
+    .restshop-logo {
+        cursor: pointer;
+
+        @media screen and (min-width: 645px) {
+            & {
+                width: 600px;
+            }
+        }
+    }
+
+    .search-column {
+        display: inline-block;
+        width: 58%;
+
+        @media screen and (min-width: 645px) {
+            & {
+                width: 425px;
+            }
+        }
+    }
+
+    .extra-button-column {
+        display: inline-block;
+        vertical-align: top;
+        width: 22%;
+
+        @media screen and (min-width: 645px) {
+            & {
+                width: 95px;
+            }
+        }
+
+        .btn-sign-in, .btn-user {
+            width: 100%;
+        }
+    }
+
+    .cart-button-column {
+        display: inline-block;
+        vertical-align: top;
+        width: 14%;
+
+        @media screen and (min-width: 645px) {
+            & {
+                width: 70px;
+            }
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+

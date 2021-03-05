@@ -1,0 +1,39 @@
+<div>
+    <rs-filter-options tags="vm.tags"
+                       in-stock="vm.inStock"
+                       slider="vm.slider"
+                       properties="vm.properties"
+                       filter-change="vm.refreshFilter()"></rs-filter-options>
+
+    <div class="row text-center" ng-show="vm.loading">
+        <img src="/static/img/spinner.gif">
+    </div>
+
+    <div class="row text-center bottom-buffer" ng-show="!vm.loading">
+        <div class="col-xs-12">
+            <a class="product-item-container"
+               ui-sref="product-details({id: product.id})"
+               ng-repeat="product in vm.products">
+                <rs-product-list-item product="product"></rs-product-list-item>
+            </a>
+
+            <div class="products-not-found text-center" ng-hide="vm.products.length">
+                <p class="main-msg text-uppercase">No matches found</p>
+                <p class="secondary-msg text-uppercase">Please, try another search</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center bottom-buffer">
+       <button class="btn btn-red text-uppercase"
+               ng-class="{'disabled': !vm.hasPrev}"
+               ng-click="vm.pagePrev()">
+           Prev
+       </button>
+       <button class="btn btn-red text-uppercase"
+               ng-class="{'disabled': !vm.hasNext}"
+               ng-click="vm.pageNext()">
+           Next
+       </button>
+    </div>
+</div>

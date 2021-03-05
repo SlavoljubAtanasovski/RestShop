@@ -1,0 +1,87 @@
+$clear-button-color: darken($light, 10%);
+$input-color: darken($light, 6%);
+$filter-text-color: #7a7a7a;
+
+.collapse-filter-button {
+    font-size: 14pt;
+
+    .collapse-chevron {
+        font-size: 11pt;
+    }
+}
+
+.collapse-chevron {
+    transition: transform 0.3s ease-in-out;
+
+    &.flipped {
+        transform: rotate(-180deg);
+    }
+}
+
+rs-filter-options {
+    @include collapse-transition();
+
+    .checkbox, .filter-text {
+        color: $filter-text-color;
+    }
+
+    .filter-title {
+        font-size: 14pt;
+    }
+
+    .filter-text {
+        margin: 10px 0;
+
+        input {
+            width: 50px;
+            border: none;
+            background-color: $input-color;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .filter-input-title {
+            display: inline-block;
+            text-transform: uppercase;
+            width: 40px;
+        }
+
+        .clear-button {
+            color: $clear-button-color;
+            cursor: pointer;
+
+            &:hover {
+                color: darken($clear-button-color, 15%);
+            }
+        }
+    }
+
+    .filter-property-block {
+        .property-name {
+            margin: 15px 0 0;
+            display: inline-block;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $crimson;
+            }
+
+            .collapse-chevron {
+                font-size: 10pt;
+            }
+        }
+
+        .num-of-options {
+            margin-left: 5px;
+            font-size: 8pt;
+            color: $filter-text-color;
+        }
+
+        .property-collapsing-block {
+            @include collapse-transition();
+        }
+    }
+}

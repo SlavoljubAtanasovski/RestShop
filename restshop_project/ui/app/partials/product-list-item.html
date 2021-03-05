@@ -1,0 +1,19 @@
+<img class="product-image" ng-src="{{ vm.product.image }}">
+<div class="product-title-container">
+    <span class="product-title">{{ vm.product.title }}</span>
+</div>
+
+<span class="product-price"
+      ng-if="vm.product.prices.min !== vm.product.prices.max">
+    ${{ vm.product.prices.min }} - ${{ vm.product.prices.max }}
+</span>
+<span class="product-price"
+      ng-if="vm.product.prices.min === vm.product.prices.max">
+    ${{ vm.product.prices.min }}
+</span>
+
+<div class="tags-container">
+    <span class="label label-tag"
+          ng-repeat="tag in vm.product.tags"
+          ng-click="vm.applyTag($event, tag)">{{ tag }}</span>
+</div>

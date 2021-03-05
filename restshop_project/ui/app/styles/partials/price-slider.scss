@@ -1,0 +1,34 @@
+.price-slider.rzslider {
+
+    .rz-pointer {
+        transition: background-color 0.3s ease,
+                    left 0.1s ease;
+        background-color: $crimson;
+    }
+
+    .rz-pointer:hover {
+        background-color: darken($crimson, 8%);
+    }
+
+    .rz-pointer:focus {
+        outline: none;
+    }
+
+    .rz-pointer::after {
+        background-color: $light !important;
+    }
+
+    .rz-selection {
+        background-color: $crimson;
+    }
+
+    .rz-bar-wrapper {
+        transition: width 0.1s ease,
+                    left 0.1s ease;
+    }
+
+    .rz-bubble {
+        transition: left 0.1s ease;
+        text-transform: uppercase;
+    }
+}
